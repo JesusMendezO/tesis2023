@@ -14,7 +14,7 @@ dotenv.config();
 conectarDB();
 
 // Configurar CORS
-const whitelist = 'https://exquisite-malabi-edd6e4.netlify.app';
+const whitelist = [process.env.FRONTEND_URL];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -46,7 +46,7 @@ import { Server } from "socket.io";
 const io = new Server(servidor, {
   pingTimeout: 60000,
   cors: {
-    origin:'https://exquisite-malabi-edd6e4.netlify.app',
+    origin: process.env.FRONTEND_URL,
   },
 });
 
