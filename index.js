@@ -46,7 +46,7 @@ import { Server } from "socket.io";
 const io = new Server(servidor, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.FRONTEND_URL,
+    origin:'https://exquisite-malabi-edd6e4.netlify.app',
   },
 });
 
