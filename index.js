@@ -14,7 +14,7 @@ dotenv.config();
 conectarDB();
 
 // Configurar CORS
-const whitelist = [process.env.FRONTEND_URL];
+const whitelist = 'https://exquisite-malabi-edd6e4.netlify.app';
 
 const corsOptions = {
   origin: function (origin, callback) {
