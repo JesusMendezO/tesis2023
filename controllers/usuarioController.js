@@ -1,4 +1,5 @@
 import Usuario from "../models/Usuario.js";
+import Pagos from "../models/DatosPago.js";
 import generarId from "../helpers/generarId.js";
 import generarJWT from "../helpers/generarJWT.js";
 import { emailRegistro, emailOlvidePassword } from "../helpers/email.js";
@@ -145,7 +146,12 @@ const perfil = async (req, res) => {
 
   res.json(usuario);
 };
-
+const voluntario= async (req, res) => {
+  const { usuario } = req.params;
+  console.log(usuario)
+  const existeUsuario = await Pagos.find({});
+  res.json(existeUsuario);
+};
 export {
   registrar,
   autenticar,
@@ -154,4 +160,5 @@ export {
   comprobarToken,
   nuevoPassword,
   perfil,
+  voluntario,
 };
